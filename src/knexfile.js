@@ -1,9 +1,9 @@
-// Update with your config settings.
 
 module.exports = {
     client: 'mysql',
     connection: {
-      host : 'db',
+      host : 'localhost',
+      port: 3306,
       database: 'test',
       user:     'root',
       password: 'your_passwd'

@@ -7,10 +7,10 @@ services:
     ports:
       - "${WEB_PORT}:${WEB_PORT}"
     depends_on:
-      - "${MYSQL_HOST}"
+      - db
   db:
     build: ./database
     ports:
-      - "3306:3306"
+      - "${DB_PORT}:${DB_PORT}"
     env_file:
       - ./.env
