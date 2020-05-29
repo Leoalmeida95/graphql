@@ -3,9 +3,10 @@
 module.exports = {
     client: 'mysql',
     connection: {
-      database: 'graphql',
+      host : 'db',
+      database: 'test',
       user:     'root',
-      password: 'root'
+      password: 'your_passwd'
     },
     pool: {
       min: 2,
