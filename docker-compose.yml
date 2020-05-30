@@ -6,21 +6,19 @@ services:
     env_file:
       - ./.env
     ports:
-      - "${WEB_PORT}:${WEB_PORT}"
+      - 3014:3014
     depends_on:
-      - mysql
+      - db
     links:
-      - mysql
+      - db
     networks:
       - mysql-mysql
 
-  mysql:
-    container_name: mysql
+  db:
+    container_name: db
     build: ./database
-    expose: 
-      - "${DB_PORT}"
     ports:
-      - "${DB_PORT}:${DB_PORT}"
+      - 3306:3306
     env_file:
       - ./.env
     networks:
