@@ -13,7 +13,7 @@ module.exports ={
         }
     },
     Mutation: {
-        async createUsers(_, {input}) {
+        async createUser(_, {input}) {
             const result = await db('users').insert({ ...input})
 
             const id = result[0]
