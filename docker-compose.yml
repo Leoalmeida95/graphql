@@ -2,15 +2,29 @@ version: '3'
 services:
   node:
     build: ./
+    container_name: node
     env_file:
       - ./.env
     ports:
       - "${WEB_PORT}:${WEB_PORT}"
     depends_on:
-      - db
-  db:
+      - mysql
+    links:
+      - mysql
+    networks:
+      - mysql-mysql
+
+  mysql:
+    container_name: mysql
     build: ./database
+    expose: 
+      - "${DB_PORT}"
     ports:
       - "${DB_PORT}:${DB_PORT}"
     env_file:
       - ./.env
+    networks:
+      - mysql-mysql
+
+networks:
+  mysql-mysql:

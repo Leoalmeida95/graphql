@@ -9,4 +9,4 @@ module.exports = knex
 //     password: 'teste'
 // }).then(data => console.log(data))
 
-knex('users').then(resultado => console.log(resultado))
+// knex('users').then(resultado => console.log(resultado))

@@ -8,8 +8,8 @@ RUN npm install --quiet
 
 RUN npm install nodemon -g --quiet
 
-COPY /src/index.js .
+COPY . .
 
-EXPOSE 3000
+EXPOSE 3014
 
-CMD nodemon -L --watch . src/index.js
+CMD nodemon -L --watch . src/server.js
